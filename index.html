@@ -114,8 +114,8 @@
                     <span class="text-xs sm:text-sm font-bold leading-tight">Uniformes</span>
                 </button>
                 
-                <button onclick="openModal('modalViaturas')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-slate-100 text-navy transition active:scale-95 min-h-[60px] border border-transparent hover:border-slate-200">
-                    <div class="w-9 h-9 rounded-xl bg-navy/10 flex items-center justify-center text-navy mb-1.5">
+                <button disabled class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-slate-50 text-slate-400 cursor-not-allowed opacity-60 border border-slate-200/60">
+                    <div class="w-9 h-9 rounded-xl bg-slate-200/70 flex items-center justify-center text-slate-400 mb-1.5">
                         <i class="fa-solid fa-car-side text-lg"></i>
                     </div>
                     <span class="text-xs sm:text-sm font-bold leading-tight">Viaturas</span>
@@ -330,7 +330,7 @@
                         id: "23.01",
                         time: "12:00",
                         endHour: 12.5,
-                        activity: "Chegada do C Alte Alexandre Borges (DN-02)",
+                        activity: "Chegada do C Alte Alexandre Borges (ComOpNav-10)",
                         location: "Aeroporto Internacional de Belém",
                         uniform: "Passeio",
                         flight: "G32006",
@@ -1218,50 +1218,24 @@
                 {
                     nome: "Alte Esq VAZQUEZ",
                     cargo: "Comandante de Operações Navais (CON)",
-                    hospedagem: "Residência Funcional do Com4ºDN / Hotel Universal (Santarém)",
+                    hospedagem: "Residência Funcional do Com4ºDN / Hotel Universal (Santarém-PA)",
                     periodo: "24/08 a 01/09",
-                    despenseiro: "SO-FN Silva",
-                    viatura: "VTR 1 — Sedan Executivo Blindado",
-                    placa: "OFF-0001",
-                    motorista: "SO-FN Silva",
-                    telefoneMotorista: "(91) 98111-2233",
-                    assistentes: "CC Vitor Duarte (Ajudante de Ordens)"
-                },
-                {
-                    nome: "V Alte BATISTA",
-                    cargo: "Comandante do 4º Distrito Naval (DN-01)",
-                    hospedagem: "Residência Funcional do Com4ºDN",
-                    periodo: "Permanente / Anfitrião",
-                    despenseiro: "SO-AR Carlos",
-                    viatura: "VTR 2 — Toyota Corolla Executivo",
-                    placa: "RWY-6D17",
-                    motorista: "1º Sgt Oliveira",
-                    telefoneMotorista: "(91) 98222-3344",
-                    assistentes: "CC Cerimonial / CT Assistente"
+                    despenseiro: "3ºSG-AR Diogo",
+                    assistentes: "CC Vitor Duarte (Assistente)"
                 },
                 {
                     nome: "C Alte ALEXANDRE BORGES",
-                    cargo: "Chefe do Estado-Maior do Com4ºDN (DN-02)",
-                    hospedagem: "Residência Funcional Com4ºDN / Hotel Universal",
+                    cargo: "ComOpNav-10",
+                    hospedagem: "Residência do CEM-Com4ºDN / Hotel Universal (Santarém-PA)",
                     periodo: "23/08 a 01/09",
-                    despenseiro: "2º Sgt Costa",
-                    viatura: "VTR 3 — Van Executiva Mercedes",
-                    placa: "COM-4003",
-                    motorista: "2º Sgt Costa",
-                    telefoneMotorista: "(91) 98333-4455",
-                    assistentes: "Ajudante de Ordens do EM"
+                    despenseiro: "MN-AR Fernando",
+                    assistentes: "2ºTen (AA) Gideon"
                 }
             ],
-            viaturas: [
-                { vtr: "VTR 1", autoridade: "Alte Esq VAZQUEZ (CON)", modelo: "Sedan Executivo Blindado", placa: "OFF-0001", motorista: "SO-FN Silva", tel: "(91) 98111-2233" },
-                { vtr: "VTR 2", autoridade: "V Alte BATISTA (DN-01)", modelo: "Toyota Corolla Executivo", placa: "RWY-6D17", motorista: "1º Sgt Oliveira", tel: "(91) 98222-3344" },
-                { vtr: "VTR 3", autoridade: "C Alte ALEXANDRE BORGES", modelo: "Van Executiva Mercedes", placa: "COM-4003", motorista: "2º Sgt Costa", tel: "(91) 98333-4455" },
-                { vtr: "VTR 4", autoridade: "Apoio de Carga e Bagagens", modelo: "Pick-up de Carga Hilux", placa: "APO-4004", motorista: "3º Sgt Souza", tel: "(91) 98444-5566" }
-            ],
+            viaturas: [],
             hospedagem: [
-                { autoridade: "Alte Esq VAZQUEZ (CON)", local: "RESIDÊNCIA DO COM4°DN / HOTEL UNIVERSAL", suite: "Suíte Presidencial", periodo: "24/08 a 01/09", despenseiro: "SO-FN Silva" },
-                { autoridade: "V Alte BATISTA (DN-01)", local: "RESIDÊNCIA OFICIAL DO COM4°DN", suite: "Suíte Principal", periodo: "Permanente", despenseiro: "SO-AR Carlos" },
-                { autoridade: "C Alte ALEXANDRE BORGES (DN-02)", local: "RESIDÊNCIA FUNCIONAL / HOTEL UNIVERSAL", suite: "Suíte Oficial", periodo: "23/08 a 01/09", despenseiro: "2º Sgt Costa" }
+                { autoridade: "Alte Esq VAZQUEZ (CON)", local: "Residência do Com4°DN / Hotel Universal (Santarém-PA)", periodo: "24/08 a 01/09", despenseiro: "3ºSG-AR Diogo" },
+                { autoridade: "C Alte ALEXANDRE BORGES (ComOpNav-10)", local: "Residência do CEM-Com4ºDN / Hotel Universal (Santarém-PA)", periodo: "23/08 a 01/09", despenseiro: "MN-AR Fernando" }
             ],
             uniformes: [
                 { nome: "5.5", file: "5.5.png" },
@@ -1283,29 +1257,36 @@
                 {
                     categoria: "COMANDO DO 4º DISTRITO NAVAL",
                     itens: [
-                        { nome: "V Alte ADRIANO MARCELINO BATISTA", cargo: "Comandante do 4º Distrito Naval", tel: "(91) 3216-4000" },
-                        { nome: "C Alte ALEXANDRE BORGES", cargo: "Chefe do Estado-Maior do Com4ºDN", tel: "(91) 3216-4001" }
+                        { nome: "V Alte ADRIANO MARCELINO BATISTA", cargo: "Comandante do 4º Distrito Naval", tel: "(91) 98266-0201" },
+                        { nome: "C Alte JOSÉ FABIO CARNEIRO DA SILVA", cargo: "Chefe do Estado-Maior do Comandante do 4º Distrito Naval", tel: "(91) 98266-0233" }
                     ]
                 },
                 {
                     categoria: "ASSISTENTES E AJUDANTE DE ORDENS",
                     itens: [
-                        { nome: "CC VITOR DUARTE", cargo: "Ajudante de Ordens do CON", tel: "(91) 99123-4567" },
-                        { nome: "CC CERIMONIAL", cargo: "Oficial de Cerimonial Com4ºDN", tel: "(91) 99234-5678" }
+                        { nome: "CT ANTONIO DE OLIVEIRA CURA JUNIOR", cargo: "Assistente do Comandante do 4º Distrito Naval", tel: "(91) 98125-0005" },
+                        { nome: "CT (AA) CARLOS GABRIEL M. FRANCO DA SILVA", cargo: "Ajudante de Ordens do Comandante do 4º Distrito Naval", tel: "(91) 98266-0283" },
+                        { nome: "1T (AA) JOSÉ RENATO MENDES DE SOUZA", cargo: "Assistente do Chefe do Estado-Maior", tel: "(91) 98266-0275" }
                     ]
                 },
                 {
-                    categoria: "OFICIAIS DE SERVIÇO E EMERGÊNCIA",
+                    categoria: "OFICIAIS DE SERVIÇO",
                     itens: [
-                        { nome: "Oficial de Dia do Com4ºDN", cargo: "Plantão 24h Belém", tel: "(91) 3216-4000" },
-                        { nome: "Hospital Naval de Belém (HNBe)", cargo: "Emergência / Apoio de Saúde", tel: "(91) 3216-4500" }
+                        { nome: "OSP - Com4°DN", cargo: "Oficial de Serviço Policial / Plantão", tel: "(91) 98266-0154" },
+                        { nome: "OSE - Com4°DN", cargo: "Oficial de Serviço de Engenharia / Estado-Maior", tel: "(91) 98266-0328" }
                     ]
                 },
                 {
-                    categoria: "ORGANIZAÇÕES MILITARES E CAPITANIAS",
+                    categoria: "TITULARES DE OM",
                     itens: [
-                        { nome: "Capitania Fluvial de Santarém (CFS)", cargo: "Apoio e Operações Santarém", tel: "(93) 3522-1000" },
-                        { nome: "Base Naval de Val-de-Cães (BNVC)", cargo: "Comando da Base Naval", tel: "(91) 3216-4200" }
+                        { nome: "CMG (Md) JAIME LOBO FIGUEIREDO", cargo: "Hospital Naval de Belém", tel: "(91) 99185-4663" },
+                        { nome: "CMG (IM) LEANDRO F. HERMES ZUQUIM DE CARVALHO", cargo: "Centro de Intendência da Marinha em Belém", tel: "(91) 98266-0282" },
+                        { nome: "CMG LEONARDO AMORIM ROVERE DA SILVA", cargo: "Centro de Instrução Almirante Brás de Aguiar", tel: "(91) 98266-0312" },
+                        { nome: "CMG DANIEL JUNIOR SILVA DA COSTA", cargo: "Comandante da Base Naval de Belém", tel: "(91) 99349-1643" },
+                        { nome: "CMG GUILHERME BARROS MOREIRA", cargo: "Grupamento de Patrulha Naval do Norte", tel: "(91) 98125-5555" },
+                        { nome: "CMG ALEXANDRE BATISTA PIMENTEL", cargo: "Capitânia dos Portos da Amazônia Oriental", tel: "(91) 98266-0009" },
+                        { nome: "CF (FN) LUCIANO FERREIRA DOS SANTOS", cargo: "2° Batalhão de Operações Ribeirinhas", tel: "(91) 98266-0123" },
+                        { nome: "CC TIAGO ROCHA CARVALHO", cargo: "Estação Radiogoniométrica da Marinha em Belém", tel: "(91) 98218-0229" }
                     ]
                 }
             ]
@@ -1513,54 +1494,24 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1">
-                                <div class="flex items-center gap-1.5 font-black text-navy">
-                                    <i class="fa-solid fa-hotel text-amber-500"></i>
-                                    <span>Acomodação</span>
-                                </div>
-                                <p class="font-bold text-slate-800">${aut.hospedagem}</p>
-                                <p class="text-slate-600 font-medium">Período: <span class="font-bold text-slate-800">${aut.periodo}</span></p>
-                                <p class="text-slate-600 font-medium pt-1 border-t border-slate-200/60 mt-1">
-                                    Despenseiro: <span class="font-bold text-slate-900">${aut.despenseiro}</span>
-                                </p>
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 space-y-1.5 text-xs sm:text-sm">
+                            <div class="flex items-center gap-1.5 font-black text-navy">
+                                <i class="fa-solid fa-hotel text-amber-500"></i>
+                                <span>Acomodação</span>
                             </div>
-
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1.5">
-                                <div class="flex items-center gap-1.5 font-black text-navy">
-                                    <i class="fa-solid fa-car-side text-blue-600"></i>
-                                    <span>Viatura</span>
-                                </div>
-                                <p class="font-bold text-slate-800">${aut.viatura}</p>
-                                <div class="inline-flex items-center gap-1.5 bg-slate-900 text-white font-mono font-black text-xs px-2.5 py-1 rounded border border-slate-700 shadow-sm">
-                                    <span>PLACA:</span>
-                                    <span class="text-gold font-extrabold tracking-widest">${aut.placa}</span>
-                                </div>
-                            </div>
+                            <p class="font-bold text-slate-800">${aut.hospedagem}</p>
+                            <p class="text-slate-600 font-medium">Período: <span class="font-bold text-slate-800">${aut.periodo}</span></p>
+                            <p class="text-slate-600 font-medium pt-1 border-t border-slate-200/60 mt-1">
+                                Despenseiro: <span class="font-bold text-slate-900">${aut.despenseiro}</span>
+                            </p>
                         </div>
 
-                        <div class="space-y-2 pt-1 border-t border-slate-100 text-xs sm:text-sm">
-                            <div class="flex items-center justify-between bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
-                                <div>
-                                    <span class="text-slate-500 font-bold block text-[11px]">MOTORISTA DESIGNADO</span>
-                                    <p class="font-black text-slate-900">${aut.motorista}</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <a href="tel:${cleanPhone(aut.telefoneMotorista)}" class="w-9 h-9 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center transition shadow-sm" title="Ligar">
-                                        <i class="fa-solid fa-phone"></i>
-                                    </a>
-                                    <a href="https://wa.me/55${cleanPhone(aut.telefoneMotorista)}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-green-500 hover:bg-green-600 text-white flex items-center justify-center transition shadow-sm" title="WhatsApp">
-                                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                                    </a>
-                                </div>
+                        ${aut.assistentes ? `
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 text-xs sm:text-sm">
+                                <span class="text-slate-500 font-bold block text-[11px]">ASSISTENTE / AJUDANTE DE ORDENS</span>
+                                <p class="font-bold text-slate-800 mt-0.5">${aut.assistentes}</p>
                             </div>
-                            ${aut.assistentes ? `
-                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/80">
-                                    <span class="text-slate-500 font-bold block text-[11px]">ASSISTENTE / AJUDANTE DE ORDENS</span>
-                                    <p class="font-bold text-slate-800">${aut.assistentes}</p>
-                                </div>
-                            ` : ''}
-                        </div>
+                        ` : ''}
                     </div>
                 `).join('');
             }
@@ -1571,7 +1522,7 @@
                 hospedagemContainer.innerHTML = logistics.hospedagem.map(h => `
                     <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-1.5 shadow-sm">
                         <h4 class="text-base sm:text-lg font-black text-navy">${h.autoridade}</h4>
-                        <p class="text-xs sm:text-sm font-bold text-slate-800"><i class="fa-solid fa-hotel text-amber-500 mr-1.5"></i>${h.local} (${h.suite})</p>
+                        <p class="text-xs sm:text-sm font-bold text-slate-800"><i class="fa-solid fa-hotel text-amber-500 mr-1.5"></i>${h.local}</p>
                         <p class="text-xs sm:text-sm text-slate-600 font-medium">Período: <span class="font-bold text-slate-800">${h.periodo}</span></p>
                         <p class="text-xs sm:text-sm text-slate-600 font-medium">Despenseiro: <span class="font-bold text-slate-900">${h.despenseiro || '-'}</span></p>
                     </div>
@@ -1598,27 +1549,11 @@
             // 4. Viaturas
             const viaturasContainer = document.getElementById('viaturasListContainer');
             if (viaturasContainer) {
-                viaturasContainer.innerHTML = logistics.viaturas.map(v => `
-                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 shadow-sm">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-black px-3 py-1 rounded-lg bg-navy text-white font-mono">${v.vtr}</span>
-                            <span class="text-xs font-mono font-black bg-slate-900 text-gold px-2.5 py-1 rounded border border-slate-700">PLACA: ${v.placa}</span>
-                        </div>
-                        <h4 class="text-base sm:text-lg font-black text-slate-900">${v.autoridade}</h4>
-                        <p class="text-xs sm:text-sm text-slate-600 font-bold">${v.modelo}</p>
-                        <div class="flex items-center justify-between pt-2 border-t border-slate-200 text-xs sm:text-sm">
-                            <span class="font-bold text-slate-800"><i class="fa-solid fa-user-gear text-slate-500 mr-1"></i>${v.motorista}</span>
-                            <div class="flex items-center gap-2">
-                                <a href="tel:${cleanPhone(v.tel)}" class="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition inline-flex items-center gap-1">
-                                    <i class="fa-solid fa-phone"></i> Ligar
-                                </a>
-                                <a href="https://wa.me/55${cleanPhone(v.tel)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition inline-flex items-center gap-1">
-                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                                </a>
-                            </div>
-                        </div>
+                viaturasContainer.innerHTML = `
+                    <div class="p-6 text-center text-slate-500 font-bold text-sm bg-slate-50 rounded-2xl border border-slate-200">
+                        Informações de viaturas e motoristas temporariamente indisponíveis.
                     </div>
-                `).join('');
+                `;
             }
 
             // 5. Voos Modal Content
