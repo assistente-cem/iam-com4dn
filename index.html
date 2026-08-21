@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Eventos - IAM Com4ºDN | Visita do AE VAZQUEZ</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#002D5E',
+                            dark: '#001D3D',
+                            light: '#004085'
+                        },
+                        gold: {
+                            DEFAULT: '#FFBD26',
+                            dark: '#e0a10d',
+                            light: '#ffe082'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes pulse-line {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.4; transform: scaleY(1.1); }
+        }
+        .animate-pulse-line {
+            animation: pulse-line 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .glass-header {
+            background: rgba(0, 29, 61, 0.96);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="h-full bg-slate-50 font-sans text-slate-800 antialiased pb-16">
+
+    <header class="sticky top-0 z-30 glass-header border-b-2 border-gold text-white shadow-lg">
+        <div class="max-w-5xl mx-auto px-4 py-3">
+            <div class="flex items-center gap-3.5">
+                <!-- Institution Logo - Brasão 4ºDN -->
+                <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center flex-shrink-0 bg-white/10 rounded-xl p-1 border border-white/20 shadow-inner">
+                    <i class="fa-solid fa-anchor text-gold text-2xl"></i>
+                </div>
+                <!-- Institution Title -->
+                <div>
+                    <span class="text-[11px] tracking-widest font-black uppercase text-gold block leading-tight">Marinha do Brasil</span>
+                    <h1 class="text-lg sm:text-2xl font-black text-white tracking-tight leading-tight">Comando do 4º Distrito Naval</h1>
+                    <p class="text-xs sm:text-sm text-slate-200 font-semibold truncate max-w-[290px] sm:max-w-none">
+                        Programa de Eventos - Visita do AE VAZQUEZ
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Day Navigation Tabs -->
+        <div class="bg-navy-dark/95 border-t border-white/10 px-2 sm:px-4">
+            <div class="max-w-5xl mx-auto flex space-x-2 overflow-x-auto py-2.5 no-scrollbar" id="daysTabContainer">
+                <!-- Rendered dynamically by JavaScript -->
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-3 sm:px-4 pt-4">
+        
+        <!-- Quick Access Navigation Grid (Exactly 6 options) -->
+        <section class="mb-5 bg-white rounded-2xl shadow-sm border border-slate-200/80 p-2.5 sm:p-4">
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 text-center">
+                <button onclick="openModal('modalAutoridades')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-slate-100 text-navy transition active:scale-95 min-h-[60px] border border-transparent hover:border-slate-200">
+                    <div class="w-9 h-9 rounded-xl bg-navy/10 flex items-center justify-center text-navy mb-1.5">
+                        <i class="fa-solid fa-user-shield text-lg"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold leading-tight">Autoridades</span>
+                </button>
+                
+                <button onclick="openModal('modalAcomodacao')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-slate-100 text-navy transition active:scale-95 min-h-[60px] border border-transparent hover:border-slate-200">
+                    <div class="w-9 h-9 rounded-xl bg-navy/10 flex items-center justify-center text-navy mb-1.5">
+                        <i class="fa-solid fa-hotel text-lg"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold leading-tight">Acomodação</span>
+                </button>
+                
+                <button onclick="openModal('modalUniformes')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-slate-100 text-navy transition active:scale-95 min-h-[60px] border border-transparent hover:border-slate-200">
+                    <div class="w-9 h-9 rounded-xl bg-navy/10 flex items-center justify-center text-navy mb-1.5">
+                        <i class="fa-solid fa-shirt text-lg"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold leading-tight">Uniformes</span>
+                </button>
+                
+                <button onclick="openModal('modalViaturas')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-slate-100 text-navy transition active:scale-95 min-h-[60px] border border-transparent hover:border-slate-200">
+                    <div class="w-9 h-9 rounded-xl bg-navy/10 flex items-center justify-center text-navy mb-1.5">
+                        <i class="fa-solid fa-car-side text-lg"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold leading-tight">Viaturas</span>
+                </button>
+                
+                <button onclick="openModal('modalVoos')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-sky-50 text-sky-700 transition active:scale-95 min-h-[60px] border border-transparent hover:border-sky-200">
+                    <div class="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-600 mb-1.5">
+                        <i class="fa-solid fa-plane-departure text-lg"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold leading-tight">Voos</span>
+                </button>
+                
+                <button onclick="openModal('modalContatos')" class="flex flex-col items-center justify-center p-2.5 rounded-xl hover:bg-slate-100 text-navy transition active:scale-95 min-h-[60px] border border-transparent hover:border-slate-200">
+                    <div class="w-9 h-9 rounded-xl bg-navy/10 flex items-center justify-center text-navy mb-1.5">
+                        <i class="fa-solid fa-address-book text-lg"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold leading-tight">Telefones Úteis</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Schedule Container -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-4 sm:p-6 min-h-[420px]">
+            <div class="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-100">
+                <div class="flex items-center gap-2.5">
+                    <h2 class="text-base sm:text-xl font-black text-navy uppercase tracking-wider" id="currentDayTitle">
+                        Cronograma do Dia
+                    </h2>
+                </div>
+                <span class="text-xs sm:text-sm font-bold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full" id="eventCountBadge">
+                    0 Eventos
+                </span>
+            </div>
+            
+            <!-- Schedule Timeline List -->
+            <div class="relative pl-3 sm:pl-4 space-y-6" id="timelineContainer">
+                <!-- Rendered dynamically by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL: Event Details -->
+    <div id="modalEvent" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[85vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-gold text-lg"></i>
+                    <h3 class="font-extrabold text-base sm:text-lg">Detalhes da Atividade</h3>
+                </div>
+                <button onclick="closeModal('modalEvent')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-5 overflow-y-auto space-y-4" id="modalEventContent">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalEvent')" class="px-5 py-2.5 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Autoridades -->
+    <div id="modalAutoridades" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-2xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield text-gold text-xl"></i>
+                    <h3 class="font-black text-lg">Autoridades</h3>
+                </div>
+                <button onclick="closeModal('modalAutoridades')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:p-6 overflow-y-auto space-y-4" id="autoridadesListContainer">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalAutoridades')" class="px-5 py-2 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Acomodação -->
+    <div id="modalAcomodacao" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[85vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-hotel text-gold text-lg"></i>
+                    <h3 class="font-extrabold text-lg">Controle de Hospedagem</h3>
+                </div>
+                <button onclick="closeModal('modalAcomodacao')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-3" id="hospedagemListContainer">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalAcomodacao')" class="px-5 py-2 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Uniformes -->
+    <div id="modalUniformes" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-2xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[90vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shirt text-gold text-lg"></i>
+                    <h3 class="font-extrabold text-lg">Uniformes</h3>
+                </div>
+                <button onclick="closeModal('modalUniformes')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 gap-4" id="uniformesGridContainer">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalUniformes')" class="px-5 py-2 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Viaturas -->
+    <div id="modalViaturas" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[85vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-car-side text-gold text-lg"></i>
+                    <h3 class="font-extrabold text-lg">Controle de Viaturas</h3>
+                </div>
+                <button onclick="closeModal('modalViaturas')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-3" id="viaturasListContainer">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalViaturas')" class="px-5 py-2 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Voos -->
+    <div id="modalVoos" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[85vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-plane-departure text-gold text-lg"></i>
+                    <h3 class="font-extrabold text-lg">Voos</h3>
+                </div>
+                <button onclick="closeModal('modalVoos')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-3.5" id="voosListContainer">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalVoos')" class="px-5 py-2 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Telefones Úteis -->
+    <div id="modalContatos" class="fixed inset-0 bg-navy-dark/70 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-white w-full sm:max-w-2xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden transform transition-all max-h-[85vh] flex flex-col">
+            <div class="p-4 bg-navy text-white flex items-center justify-between border-b border-gold/30">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-address-book text-gold text-lg"></i>
+                    <h3 class="font-extrabold text-lg">Telefones Úteis</h3>
+                </div>
+                <button onclick="closeModal('modalContatos')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-5" id="contatosListContainer">
+                <!-- Rendered by JS -->
+            </div>
+            <div class="p-3 bg-slate-50 border-t border-slate-100 text-right">
+                <button onclick="closeModal('modalContatos')" class="px-5 py-2 bg-navy text-white text-sm font-bold rounded-xl hover:bg-navy-dark transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Full Event Schedule Object Data
+        const schedule = [
+            {
+                date: "2026-08-23",
+                dayLabel: "23 AGO",
+                weekDay: "Domingo",
+                events: [
+                    {
+                        id: "23.01",
+                        time: "12:00",
+                        endHour: 12.5,
+                        activity: "Chegada do C Alte Alexandre Borges (DN-02)",
+                        location: "Aeroporto Internacional de Belém",
+                        uniform: "Passeio",
+                        flight: "G32006",
+                        participants: "DN-02"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-24",
+                dayLabel: "24 AGO",
+                weekDay: "Segunda-feira",
+                events: [
+                    {
+                        id: "24.01",
+                        time: "02:15",
+                        endHour: 2.58,
+                        activity: "Chegada do CON — AE VAZQUEZ (Voo GOL 2008)",
+                        location: "Aeroporto Internacional de Belém",
+                        uniform: "Passeio",
+                        flight: "G32008",
+                        participants: "DN-01, DN-02, DN-01.1, DN-01.2"
+                    },
+                    {
+                        id: "24.02",
+                        time: "02:35",
+                        endHour: 2.75,
+                        activity: "Deslocamento para a residência",
+                        location: "Aeroporto Internacional de Belém",
+                        uniform: "Passeio",
+                        participants: "CON, DN-01, DN-02, CC Vitor Duarte, DN-01.1, DN-01.2"
+                    },
+                    {
+                        id: "24.03",
+                        time: "02:45",
+                        endHour: 8.5,
+                        activity: "Acomodação",
+                        location: "Residência funcional do Com4ºDN",
+                        uniform: "Casual",
+                        participants: "CON, DN-01"
+                    },
+                    {
+                        id: "24.04",
+                        time: "08:30",
+                        endHour: 9.16,
+                        activity: "Café da manhã",
+                        location: "Residência funcional do Com4ºDN",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "24.05",
+                        time: "09:10",
+                        endHour: 9.33,
+                        activity: "Deslocamento para o cais da BNVC",
+                        location: "Base Naval de Val-de-Cães",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "24.06",
+                        time: "09:20",
+                        endHour: 9.91,
+                        activity: "Deslocamento de lancha para o Com4ºDN",
+                        location: "Terminal Hidroviário da Tamandaré",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "24.07",
+                        time: "09:55",
+                        endHour: 10.0,
+                        activity: "Honras de recepção ao Comandante de Operações Navais",
+                        location: "Comando do 4º Distrito Naval",
+                        uniform: "5.5",
+                        participants: "Tripulação do 4DN"
+                    },
+                    {
+                        id: "24.08",
+                        time: "10:00",
+                        endHour: 10.5,
+                        activity: "Mostra de Pessoal",
+                        location: "Alameda do Com4°DN",
+                        uniform: "5.5",
+                        participants: "Tripulação do 4DN"
+                    },
+                    {
+                        id: "24.09",
+                        time: "10:40",
+                        endHour: 11.5,
+                        activity: "Apresentação do Com4ºDN",
+                        location: "Auditório Portal da Amazônia",
+                        uniform: "5.5",
+                        participants: "Encarregados de Seção do EM e CGS, Titulares de OM, Sub-mor das OM do 4DN sediados em Belém"
+                    },
+                    {
+                        id: "24.10",
+                        time: "11:40",
+                        endHour: 13.5,
+                        activity: "Cerimônia apartada de entrega da Medalha de Serviço Militar ao VA Batista seguido de almoço",
+                        location: "Salão Nobre do Com4ºDN",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02, Oficiais do 4DN e Comitiva",
+                        notes: "Haverá troca de uniforme após a refeição."
+                    },
+                    {
+                        id: "24.11",
+                        time: "13:45",
+                        endHour: 15.0,
+                        activity: "Visita às instalações do HNBe",
+                        location: "Hospital Naval de Belém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, Comitiva",
+                        route: [
+                            "Serviço de Estabilização de Paciente",
+                            "Tomografia",
+                            "Nova Central de abastecimento farmacêutico",
+                            "Local da construção da nova ala do HNBe",
+                            "CTI",
+                            "Quimioterapia"
+                        ]
+                    },
+                    {
+                        id: "24.12",
+                        time: "15:00",
+                        endHour: 17.0,
+                        activity: "Mostra de Material",
+                        location: "Comando do 4° Distrito Naval",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "CGS", "SPJM", "Alojamentos", "Rancho", "SRD", "Praça D'Armas e HT", "Rádio Marinha", "Seção de Operações", "Prédio do Comando"
+                        ]
+                    },
+                    {
+                        id: "24.13",
+                        time: "17:00",
+                        endHour: 19.5,
+                        activity: "Deslocamento para a residência",
+                        location: "Residência Funcional do Com4ºDN",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "24.14",
+                        time: "19:30",
+                        endHour: 21.5,
+                        activity: "JANTAR",
+                        location: "Amazônia na Cuia",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01, DN-02"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-25",
+                dayLabel: "25 AGO",
+                weekDay: "Terça-feira",
+                events: [
+                    {
+                        id: "25.01",
+                        time: "06:00",
+                        endHour: 7.0,
+                        activity: "TFM (Treinamento Físico Militar)",
+                        location: "Residência Funcional do Com4°DN",
+                        uniform: "TFM",
+                        participants: "CON, DN-01"
+                    },
+                    {
+                        id: "25.02",
+                        time: "07:30",
+                        endHour: 8.16,
+                        activity: "Café da Manhã",
+                        location: "Residência Funcional do Com4°DN",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "25.03",
+                        time: "08:10",
+                        endHour: 8.83,
+                        activity: "Visita ao NASH Anna Nery",
+                        location: "NASH Anna Nery",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02, GPNN-01"
+                    },
+                    {
+                        id: "25.04",
+                        time: "09:00",
+                        endHour: 9.33,
+                        activity: "Visita ao AvHoFlu 'Rio Tocantins'",
+                        location: "AvHoFlu Rio Tocantins",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02, CHN4-01"
+                    },
+                    {
+                        id: "25.05",
+                        time: "09:30",
+                        endHour: 10.0,
+                        activity: "Deslocamento de lancha para o NA PARÁ",
+                        location: "Baía do Guajará",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "25.06",
+                        time: "10:00",
+                        endHour: 12.0,
+                        activity: "Desembarque Ribeirinho",
+                        location: "Outeiro",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02, Comitiva",
+                        notes: "Desembarque ribeirinho com participação da ANV UH-15."
+                    },
+                    {
+                        id: "25.07",
+                        time: "12:30",
+                        endHour: 14.0,
+                        activity: "Almoço a bordo do NA PARÁ",
+                        location: "Baía do Guajará",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "25.08",
+                        time: "14:00",
+                        endHour: 14.33,
+                        activity: "Desembarque de lancha e regresso para BNVC",
+                        location: "Baía do Guajará / BNVC",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "25.09",
+                        time: "14:30",
+                        endHour: 15.5,
+                        activity: "Visita às obras da BNVC, áreas de cessão de uso onerosa e complexo alimentar",
+                        location: "BNVC",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, Comitiva",
+                        route: [
+                            "Área de cessão de uso onerosa",
+                            "Obras do novo cais da BNVC",
+                            "Rancho",
+                            "Cozinha"
+                        ]
+                    },
+                    {
+                        id: "25.10",
+                        time: "16:00",
+                        endHour: 17.0,
+                        activity: "Deslocamento para residência",
+                        location: "Residência Funcional do Com4ºDN",
+                        uniform: "OP3",
+                        participants: "CON, DN-01"
+                    },
+                    {
+                        id: "25.11",
+                        time: "19:30",
+                        endHour: 21.5,
+                        activity: "JANTAR",
+                        location: "Restaurante Zio - Estação das Docas",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01, DN-02"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-26",
+                dayLabel: "26 AGO",
+                weekDay: "Quarta-feira",
+                events: [
+                    {
+                        id: "26.01",
+                        time: "06:30",
+                        endHour: 7.5,
+                        activity: "TFM",
+                        location: "Vila Naval Espadarte",
+                        uniform: "TFM",
+                        participants: "CON, DN-01"
+                    },
+                    {
+                        id: "26.02",
+                        time: "08:00",
+                        endHour: 8.66,
+                        activity: "Café da manhã",
+                        location: "Residência funcional do Com4°DN",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "26.03",
+                        time: "08:40",
+                        endHour: 9.0,
+                        activity: "Deslocamento para o 2°BtlOpRib",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "26.04",
+                        time: "09:00",
+                        endHour: 10.5,
+                        activity: "Visita às obras e instalações do 2°BtlOpRib",
+                        location: "Rua da Marinha - 2º Batalhão de Operações Ribeirinhas",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "Revista à tropa formada",
+                            "Linha de tiro",
+                            "Rancho e cozinha",
+                            "Obras em andamento"
+                        ]
+                    },
+                    {
+                        id: "26.05",
+                        time: "10:40",
+                        endHour: 11.5,
+                        activity: "Visita às instalações da ERMBe",
+                        location: "ERMBe - Estação Rádio da Marinha em Belém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "Posto de monitoragem",
+                            "Parque de antenas",
+                            "Posto de comunicações",
+                            "Gabinete"
+                        ]
+                    },
+                    {
+                        id: "26.06",
+                        time: "11:40",
+                        endHour: 12.0,
+                        activity: "Deslocamento para o CIABA",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "26.07",
+                        time: "12:00",
+                        endHour: 13.5,
+                        activity: "Almoço com a presença dos alunos",
+                        location: "CIABA",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02, Alunos EFOMM"
+                    },
+                    {
+                        id: "26.08",
+                        time: "13:30",
+                        endHour: 15.0,
+                        activity: "Visita às instalações do CIABA",
+                        location: "CIABA",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "Escolas",
+                            "Laboratórios de Eletrônica, Eletrotécnica, Eletricidade, Controle de Processos e Automação",
+                            "Galpão de Máquinas",
+                            "Laboratório de Diesel - Elétrica",
+                            "Pátio do CBINC/ CAV",
+                            "Prédio dos simuladores"
+                        ]
+                    },
+                    {
+                        id: "26.09",
+                        time: "15:10",
+                        endHour: 16.0,
+                        activity: "Deslocamento para residência",
+                        location: "CIABA -> Residência Funcional",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "26.10",
+                        time: "19:00",
+                        endHour: 22.0,
+                        activity: "Recepção com Soamarinos",
+                        location: "Residência funcional do Com4°DN",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01, DN-02, Soamarinos, Titulares de OM diretamente subordinados e comitiva"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-27",
+                dayLabel: "27 AGO",
+                weekDay: "Quinta-feira",
+                events: [
+                    {
+                        id: "27.01",
+                        time: "07:00",
+                        endHour: 7.75,
+                        activity: "Café da manhã",
+                        location: "Residência funcional do Com4°DN",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "27.02",
+                        time: "08:00",
+                        endHour: 8.33,
+                        activity: "Deslocamento ao EsqdHU-41",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "27.03",
+                        time: "08:20",
+                        endHour: 9.83,
+                        activity: "Visita às instalações do EsqdHU-41",
+                        location: "EsqdHU-41",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "Praça D'Armas (Vídeo institucional)",
+                            "Oficina de infláveis",
+                            "Paiol do GSAR e sobrevivência",
+                            "Sala de briefing",
+                            "Oficina de Pás e paiol de descarte de resíduos",
+                            "Chegada na aeronave alimentada"
+                        ]
+                    },
+                    {
+                        id: "27.04",
+                        time: "10:00",
+                        endHour: 10.33,
+                        activity: "Deslocamento para o CHN-4",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "27.05",
+                        time: "10:20",
+                        endHour: 11.83,
+                        activity: "Visita às instalações do CHN-4",
+                        location: "CHN-4",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "Seção de Análise de Dados e Elementos",
+                            "Seção de Cartografia",
+                            "Pátio de Boias",
+                            "Paiol de Equipamentos Hidrográficos",
+                            "Oficina de Metalurgia",
+                            "Oficina de Carpintaria"
+                        ]
+                    },
+                    {
+                        id: "27.06",
+                        time: "11:50",
+                        endHour: 12.0,
+                        activity: "Deslocamento para a BNVC",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "27.07",
+                        time: "12:00",
+                        endHour: 13.25,
+                        activity: "Almoço no refeitório do CeIMBe",
+                        location: "BNVC",
+                        uniform: "OP3",
+                        participants: "Tripulações das OM do Complexo Naval de Val-de-Cães, CON, DN-01"
+                    },
+                    {
+                        id: "27.08",
+                        time: "13:30",
+                        endHour: 14.0,
+                        activity: "Deslocamento para a CPAOR",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "27.09",
+                        time: "14:00",
+                        endHour: 15.0,
+                        activity: "Visita às instalações da CPAOR",
+                        location: "CPAOR",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02",
+                        route: [
+                            "Gabinete", "Grupo de atendimento ao público", "EPM", "Seção de inquéritos", "Divisão DE IN e vistorias", "CCCAM", "Sala do STA", "GVI", "Auditório/Sala de aula", "Rancho e Praça D'armas"
+                        ]
+                    },
+                    {
+                        id: "27.10",
+                        time: "15:10",
+                        endHour: 15.58,
+                        activity: "Deslocamento para o Com4°DN",
+                        location: "Trânsito",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02"
+                    },
+                    {
+                        id: "27.11",
+                        time: "15:35",
+                        endHour: 16.16,
+                        activity: "Reunião de Coordenação",
+                        location: "Auditório Portal da Amazônia",
+                        uniform: "OP3",
+                        participants: "CON e comitiva"
+                    },
+                    {
+                        id: "27.12",
+                        time: "16:10",
+                        endHour: 16.66,
+                        activity: "Reunião de Avaliação",
+                        location: "Auditório Portal da Amazônia",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02, tripulação do 4DN e comitiva"
+                    },
+                    {
+                        id: "27.13",
+                        time: "16:40",
+                        endHour: 18.0,
+                        activity: "Interação no rancho do 4°DN",
+                        location: "Refeitório do Com4°DN",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, DN-02, tripulação do 4DN e comitiva"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-28",
+                dayLabel: "28 AGO",
+                weekDay: "Sexta-feira",
+                events: [
+                    {
+                        id: "28.01",
+                        time: "02:00",
+                        endHour: 3.41,
+                        activity: "Deslocamento para Santarém (Voo AZUL 4444)",
+                        location: "Aeroporto Internacional de Belém",
+                        uniform: "Passeio",
+                        flight: "AD4444",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "28.02",
+                        time: "04:00",
+                        endHour: 10.5,
+                        activity: "Acomodação",
+                        location: "Hotel Universal - Santarém",
+                        uniform: "Casual",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "28.03",
+                        time: "11:10",
+                        endHour: 11.33,
+                        activity: "Deslocamento para a CFS",
+                        location: "Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "28.04",
+                        time: "11:20",
+                        endHour: 13.5,
+                        activity: "Breve visita às instalações da CFS seguido de almoço",
+                        location: "Capitania Fluvial de Santarém (CFS)",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas",
+                        route: ["Gabinete", "Departamento STA", "CCCAM", "EPM"]
+                    },
+                    {
+                        id: "28.05",
+                        time: "14:00",
+                        endHour: 17.0,
+                        activity: "Visita à EEIF Carequinha",
+                        location: "Av. Rui Barbosa, 695 - Santa Clara, Santarém",
+                        uniform: "5.5",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "28.06",
+                        time: "19:30",
+                        endHour: 22.0,
+                        activity: "Jantar com Soamarinos",
+                        location: "Armazém Mendonça",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01, CFS-01, comitivas e Soamarinos"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-29",
+                dayLabel: "29 AGO",
+                weekDay: "Sábado",
+                events: [
+                    {
+                        id: "29.01",
+                        time: "07:20",
+                        endHour: 7.83,
+                        activity: "Café da Manhã",
+                        location: "Hotel Universal",
+                        uniform: "Casual",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "29.02",
+                        time: "08:00",
+                        endHour: 8.5,
+                        activity: "Deslocamento para o 8º Batalhão de Engenharia de Construção",
+                        location: "Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.03",
+                        time: "08:30",
+                        endHour: 10.5,
+                        activity: "Visita ao 8°BEC",
+                        location: "Rod. Santarém-Cuiabá, 7367",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.04",
+                        time: "10:30",
+                        endHour: 11.0,
+                        activity: "Deslocamento para o Hotel Universal",
+                        location: "Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01 e comitivas",
+                        notes: "Troca de Traje / Uniforme."
+                    },
+                    {
+                        id: "29.05",
+                        time: "11:00",
+                        endHour: 11.25,
+                        activity: "Deslocamento para o Iate Clube",
+                        location: "Santarém",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.06",
+                        time: "11:15",
+                        endHour: 11.5,
+                        activity: "Deslocamento fluvial para Casa do Saulo",
+                        location: "Rio Tapajós",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.07",
+                        time: "11:30",
+                        endHour: 13.0,
+                        activity: "Almoço na Casa do Saulo",
+                        location: "Casa do Saulo - Santarém",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.08",
+                        time: "13:00",
+                        endHour: 14.0,
+                        activity: "Deslocamento fluvial para Alter do Chão",
+                        location: "Rio Tapajós",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.09",
+                        time: "14:00",
+                        endHour: 17.0,
+                        activity: "Passeio Fluvial no Rio Tapajós",
+                        location: "Rio Tapajós / Alter do Chão",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "29.10",
+                        time: "17:30",
+                        endHour: 18.5,
+                        activity: "Deslocamento para Hotel Universal",
+                        location: "Trânsito",
+                        uniform: "Casual",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "29.11",
+                        time: "20:00",
+                        endHour: 22.0,
+                        activity: "Jantar",
+                        location: "Restaurante Piracema",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01 e comitivas"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-30",
+                dayLabel: "30 AGO",
+                weekDay: "Domingo",
+                events: [
+                    {
+                        id: "30.01",
+                        time: "08:00",
+                        endHour: 8.75,
+                        activity: "Café da Manhã",
+                        location: "Hotel Universal",
+                        uniform: "Casual",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "30.02",
+                        time: "09:00",
+                        endHour: 9.33,
+                        activity: "Deslocamento terrestre para o Iate Clube",
+                        location: "Santarém",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "30.03",
+                        time: "09:30",
+                        endHour: 16.0,
+                        activity: "Passeio Fluvial pelo Rio Arapiuns",
+                        location: "Rio Arapiuns / Santarém",
+                        uniform: "Casual",
+                        participants: "CON, DN-01, CFS-01 e comitivas",
+                        route: [
+                            "Pontos de fundeio para operação de transshipment",
+                            "Parada na Vila Coroca para almoço",
+                            "Parada na praia da ponta grande",
+                            "Atracação final no Iate Clube"
+                        ]
+                    },
+                    {
+                        id: "30.04",
+                        time: "18:00",
+                        endHour: 18.66,
+                        activity: "Deslocamento para Hotel Universal",
+                        location: "Santarém",
+                        uniform: "Casual",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "30.05",
+                        time: "19:30",
+                        endHour: 21.5,
+                        activity: "Jantar",
+                        location: "Restaurante Dom Mani",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01 e comitivas"
+                    }
+                ]
+            },
+            {
+                date: "2026-08-31",
+                dayLabel: "31 AGO",
+                weekDay: "Segunda-feira",
+                events: [
+                    {
+                        id: "31.01",
+                        time: "07:00",
+                        endHour: 7.75,
+                        activity: "Café da Manhã",
+                        location: "Hotel Universal",
+                        uniform: "Casual",
+                        participants: "CON, DN-01 e comitivas"
+                    },
+                    {
+                        id: "31.02",
+                        time: "08:00",
+                        endHour: 8.25,
+                        activity: "Deslocamento para CFS",
+                        location: "Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "31.03",
+                        time: "08:15",
+                        endHour: 9.5,
+                        activity: "Embarque na AgEFlut Ajuri III e início da Inspeção Naval",
+                        location: "Rio Amazonas e Rio Tapajós",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "31.04",
+                        time: "10:00",
+                        endHour: 11.75,
+                        activity: "Visita às instalações da Cargill",
+                        location: "Cargill - Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "31.05",
+                        time: "12:00",
+                        endHour: 13.25,
+                        activity: "Almoço",
+                        location: "Cargill",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "31.06",
+                        time: "13:30",
+                        endHour: 15.5,
+                        activity: "Visita às instalações da CDP",
+                        location: "CDP - Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "31.07",
+                        time: "16:00",
+                        endHour: 17.5,
+                        activity: "Audiência com o Prefeito de Santarém",
+                        location: "Prefeitura Municipal de Santarém",
+                        uniform: "OP3",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "31.08",
+                        time: "19:00",
+                        endHour: 21.5,
+                        activity: "Jantar por Adesão",
+                        location: "Restaurante Nossa Casa",
+                        uniform: "Esporte Amazônico",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    }
+                ]
+            },
+            {
+                date: "2026-09-01",
+                dayLabel: "01 SET",
+                weekDay: "Terça-feira",
+                events: [
+                    {
+                        id: "01.01",
+                        time: "02:00",
+                        endHour: 3.0,
+                        activity: "Deslocamento para o aeroporto de Santarém",
+                        location: "Aeroporto de Santarém",
+                        uniform: "Passeio",
+                        participants: "CON, DN-01, CFS-01 e comitivas"
+                    },
+                    {
+                        id: "01.02",
+                        time: "03:05",
+                        endHour: 10.16,
+                        activity: "Regresso do Comandante de Operações Navais (Voo LATAM 3841)",
+                        location: "Aeroporto de Santarém -> BSB -> GIG",
+                        uniform: "Passeio",
+                        flight: "LA3841",
+                        participants: "CON, DN-02",
+                        notes: "Conexão em BSB no Voo LATAM 3728 para o GIG (chegada às 10h10)."
+                    },
+                    {
+                        id: "01.03",
+                        time: "10:00",
+                        endHour: 11.5,
+                        activity: "Cerimônia apartada de imposição da OMN à CFS",
+                        location: "Capitania Fluvial de Santarém (CFS)",
+                        uniform: "5.3",
+                        participants: "DN-01, Tripulação da CFS"
+                    },
+                    {
+                        id: "01.04",
+                        time: "15:20",
+                        endHour: 16.66,
+                        activity: "Regresso do Com4°DN (Voo AZUL 2941)",
+                        location: "Aeroporto de Santarém",
+                        uniform: "OP3",
+                        flight: "AD2941",
+                        participants: "DN-01"
+                    }
+                ]
+            }
+        ];
+
+        // Logistics Object Data
+        const logistics = {
+            autoridades: [
+                {
+                    nome: "Alte Esq VAZQUEZ",
+                    cargo: "Comandante de Operações Navais (CON)",
+                    hospedagem: "Residência Funcional do Com4ºDN / Hotel Universal (Santarém)",
+                    periodo: "24/08 a 01/09",
+                    despenseiro: "SO-FN Silva",
+                    viatura: "VTR 1 — Sedan Executivo Blindado",
+                    placa: "OFF-0001",
+                    motorista: "SO-FN Silva",
+                    telefoneMotorista: "(91) 98111-2233",
+                    assistentes: "CC Vitor Duarte (Ajudante de Ordens)"
+                },
+                {
+                    nome: "V Alte BATISTA",
+                    cargo: "Comandante do 4º Distrito Naval (DN-01)",
+                    hospedagem: "Residência Funcional do Com4ºDN",
+                    periodo: "Permanente / Anfitrião",
+                    despenseiro: "SO-AR Carlos",
+                    viatura: "VTR 2 — Toyota Corolla Executivo",
+                    placa: "RWY-6D17",
+                    motorista: "1º Sgt Oliveira",
+                    telefoneMotorista: "(91) 98222-3344",
+                    assistentes: "CC Cerimonial / CT Assistente"
+                },
+                {
+                    nome: "C Alte ALEXANDRE BORGES",
+                    cargo: "Chefe do Estado-Maior do Com4ºDN (DN-02)",
+                    hospedagem: "Residência Funcional Com4ºDN / Hotel Universal",
+                    periodo: "23/08 a 01/09",
+                    despenseiro: "2º Sgt Costa",
+                    viatura: "VTR 3 — Van Executiva Mercedes",
+                    placa: "COM-4003",
+                    motorista: "2º Sgt Costa",
+                    telefoneMotorista: "(91) 98333-4455",
+                    assistentes: "Ajudante de Ordens do EM"
+                }
+            ],
+            viaturas: [
+                { vtr: "VTR 1", autoridade: "Alte Esq VAZQUEZ (CON)", modelo: "Sedan Executivo Blindado", placa: "OFF-0001", motorista: "SO-FN Silva", tel: "(91) 98111-2233" },
+                { vtr: "VTR 2", autoridade: "V Alte BATISTA (DN-01)", modelo: "Toyota Corolla Executivo", placa: "RWY-6D17", motorista: "1º Sgt Oliveira", tel: "(91) 98222-3344" },
+                { vtr: "VTR 3", autoridade: "C Alte ALEXANDRE BORGES", modelo: "Van Executiva Mercedes", placa: "COM-4003", motorista: "2º Sgt Costa", tel: "(91) 98333-4455" },
+                { vtr: "VTR 4", autoridade: "Apoio de Carga e Bagagens", modelo: "Pick-up de Carga Hilux", placa: "APO-4004", motorista: "3º Sgt Souza", tel: "(91) 98444-5566" }
+            ],
+            hospedagem: [
+                { autoridade: "Alte Esq VAZQUEZ (CON)", local: "RESIDÊNCIA DO COM4°DN / HOTEL UNIVERSAL", suite: "Suíte Presidencial", periodo: "24/08 a 01/09", despenseiro: "SO-FN Silva" },
+                { autoridade: "V Alte BATISTA (DN-01)", local: "RESIDÊNCIA OFICIAL DO COM4°DN", suite: "Suíte Principal", periodo: "Permanente", despenseiro: "SO-AR Carlos" },
+                { autoridade: "C Alte ALEXANDRE BORGES (DN-02)", local: "RESIDÊNCIA FUNCIONAL / HOTEL UNIVERSAL", suite: "Suíte Oficial", periodo: "23/08 a 01/09", despenseiro: "2º Sgt Costa" }
+            ],
+            uniformes: [
+                { nome: "5.5", file: "5.5.png" },
+                { nome: "OP3", file: "op3.png" },
+                { nome: "Esporte Amazônico", file: "esporte-amazonico.png" },
+                { nome: "Casual", file: "casual.png" },
+                { nome: "TFM", file: "tfm.png" },
+                { nome: "5.3", file: "5.3.png" },
+                { nome: "Passeio", file: "passeio.png" }
+            ],
+            voos: [
+                { codigo: "G32006", tipo: "Chegada DN-02", passageiro: "C Alte ALEXANDRE BORGES", horario: "23/08 — 12h00", rota: "Rio de Janeiro (GIG) / Belém (BEL)" },
+                { codigo: "G32008", tipo: "Chegada CON", passageiro: "Alte Esq VAZQUEZ", horario: "24/08 — 02h15", rota: "Rio de Janeiro (GIG) / Belém (BEL)" },
+                { codigo: "AD4444", tipo: "Deslocamento Santarém", passageiro: "CON & Comitiva", horario: "28/08 — 02h00 - 03h25", rota: "Belém (BEL) / Santarém (STM)" },
+                { codigo: "LA3841", tipo: "Regresso CON / DN-02", passageiro: "Alte Esq VAZQUEZ / C Alte BORGES", horario: "01/09 — 03h05 - 10h10", rota: "Santarém (STM) / Brasília (BSB) / Rio (GIG)" },
+                { codigo: "AD2941", tipo: "Regresso Com4ºDN", passageiro: "V Alte BATISTA", horario: "01/09 — 15h20 - 16h40", rota: "Santarém (STM) / Belém (BEL)" }
+            ],
+            telefonesUteis: [
+                {
+                    categoria: "COMANDO DO 4º DISTRITO NAVAL",
+                    itens: [
+                        { nome: "V Alte ADRIANO MARCELINO BATISTA", cargo: "Comandante do 4º Distrito Naval", tel: "(91) 3216-4000" },
+                        { nome: "C Alte ALEXANDRE BORGES", cargo: "Chefe do Estado-Maior do Com4ºDN", tel: "(91) 3216-4001" }
+                    ]
+                },
+                {
+                    categoria: "ASSISTENTES E AJUDANTE DE ORDENS",
+                    itens: [
+                        { nome: "CC VITOR DUARTE", cargo: "Ajudante de Ordens do CON", tel: "(91) 99123-4567" },
+                        { nome: "CC CERIMONIAL", cargo: "Oficial de Cerimonial Com4ºDN", tel: "(91) 99234-5678" }
+                    ]
+                },
+                {
+                    categoria: "OFICIAIS DE SERVIÇO E EMERGÊNCIA",
+                    itens: [
+                        { nome: "Oficial de Dia do Com4ºDN", cargo: "Plantão 24h Belém", tel: "(91) 3216-4000" },
+                        { nome: "Hospital Naval de Belém (HNBe)", cargo: "Emergência / Apoio de Saúde", tel: "(91) 3216-4500" }
+                    ]
+                },
+                {
+                    categoria: "ORGANIZAÇÕES MILITARES E CAPITANIAS",
+                    itens: [
+                        { nome: "Capitania Fluvial de Santarém (CFS)", cargo: "Apoio e Operações Santarém", tel: "(93) 3522-1000" },
+                        { nome: "Base Naval de Val-de-Cães (BNVC)", cargo: "Comando da Base Naval", tel: "(91) 3216-4200" }
+                    ]
+                }
+            ]
+        };
+
+        // State Variables
+        let selectedDayIndex = 1; // Defaults to 24 AGO
+
+        // Helper Functions
+        function cleanPhone(phoneStr) {
+            return phoneStr ? phoneStr.replace(/\D/g, '') : '';
+        }
+
+        function getMapsLink(loc) {
+            if (!loc || loc === "-") return "#";
+            const cleanLoc = loc.toLowerCase().includes("santarém") || loc.toLowerCase().includes("belém") 
+                ? loc 
+                : `${loc}, Pará, Brasil`;
+            return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanLoc)}`;
+        }
+
+        function getFlightTrackerLink(flightCode) {
+            if (!flightCode) return "#";
+            const cleanFlight = flightCode.replace(/\s+/g, '');
+            return `https://flightaware.com/live/flight/${encodeURIComponent(cleanFlight)}`;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                renderTabs();
+                renderTimeline();
+                renderModalsData();
+                setInterval(updateIndicator, 60000);
+            } catch (err) {
+                console.error("Initialization Error:", err);
+            }
+        });
+
+        function renderTabs() {
+            const tabContainer = document.getElementById('daysTabContainer');
+            if (!tabContainer) return;
+            tabContainer.innerHTML = schedule.map((day, idx) => {
+                const isActive = idx === selectedDayIndex;
+                // Get compact 3-letter weekday abbreviation (e.g., DOM, SEG, TER)
+                const shortDay = day.weekDay.split('-')[0].substring(0, 3).toUpperCase();
+                return `
+                    <button id="day-tab-${idx}" onclick="switchDay(${idx})" 
+                            class="flex-shrink-0 min-w-[65px] sm:min-w-[82px] px-2 py-1.5 sm:px-2.5 sm:py-2 rounded-xl font-black text-xs sm:text-sm transition-all text-center flex flex-col items-center justify-center border ${
+                                isActive 
+                                    ? 'bg-gold text-navy-dark border-gold shadow-md font-extrabold' 
+                                    : 'bg-white/10 text-slate-200 border-white/10 hover:bg-white/20'
+                            }">
+                        <span class="text-[9px] sm:text-[10px] tracking-wider uppercase font-extrabold ${isActive ? 'text-navy-dark/80' : 'text-slate-300'}">${shortDay}</span>
+                        <span class="text-xs sm:text-sm font-black whitespace-nowrap">${day.dayLabel}</span>
+                    </button>
+                `;
+            }).join('');
+
+            // Automatically scroll selected day into view
+            const activeTab = document.getElementById(`day-tab-${selectedDayIndex}`);
+            if (activeTab) {
+                activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        }
+
+        function switchDay(index) {
+            selectedDayIndex = index;
+            renderTabs();
+            renderTimeline();
+        }
+
+        function renderTimeline() {
+            const dayData = schedule[selectedDayIndex];
+            const container = document.getElementById('timelineContainer');
+            const titleEl = document.getElementById('currentDayTitle');
+            const countEl = document.getElementById('eventCountBadge');
+            if (!container || !dayData) return;
+
+            if (titleEl) titleEl.innerText = `${dayData.weekDay.toUpperCase()} — ${dayData.dayLabel}`;
+            if (countEl) countEl.innerText = `${dayData.events.length} Atividades`;
+
+            const now = new Date();
+            const currentHours = now.getHours() + (now.getMinutes() / 60);
+            const isToday = now.toISOString().split('T')[0] === dayData.date;
+
+            let html = `
+                <div class="absolute left-3 sm:left-4 top-2 bottom-2 w-0.5 bg-slate-200 -translate-x-1/2"></div>
+            `;
+
+            dayData.events.forEach((evt) => {
+                const [h, m] = evt.time.split(':').map(Number);
+                const eventStartHour = h + (m / 60);
+                const isCurrent = isToday && currentHours >= eventStartHour && currentHours < evt.endHour;
+
+                html += `
+                    <div class="relative pl-6 sm:pl-9 group">
+                        <!-- Time Indicator Pin -->
+                        <div class="absolute left-0 top-1.5 w-6 sm:w-8 h-6 sm:h-8 rounded-full flex items-center justify-center -translate-x-1/2 transition ${
+                            isCurrent 
+                                ? 'bg-red-600 text-white ring-4 ring-red-200 animate-pulse z-10' 
+                                : 'bg-navy text-gold shadow-sm border-2 border-white'
+                        }">
+                            <i class="fa-solid ${isCurrent ? 'fa-clock' : 'fa-anchor'} text-[10px] sm:text-xs"></i>
+                        </div>
+
+                        <!-- Event Card -->
+                        <div class="p-4 sm:p-5 rounded-2xl border transition-all ${
+                            isCurrent 
+                                ? 'bg-red-50/70 border-red-300 shadow-md ring-2 ring-red-200' 
+                                : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm'
+                        }">
+                            <!-- Top Row: Time, Uniform Badge and Info Button -->
+                            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-base sm:text-lg font-black text-navy font-mono bg-navy/5 px-3 py-1 rounded-lg border border-navy/10">
+                                        ${evt.time}
+                                    </span>
+                                    <span class="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                                        ${evt.id}
+                                    </span>
+                                    ${isCurrent ? `
+                                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-red-600 text-white animate-pulse">
+                                            AGORA
+                                        </span>
+                                    ` : ''}
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    ${evt.uniform ? `
+                                        <button onclick="openModal('modalUniformes')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gold/20 border border-gold/40 text-navy-dark text-xs sm:text-sm font-extrabold hover:bg-gold/30 transition">
+                                            <i class="fa-solid fa-shirt text-amber-600 text-xs"></i>
+                                            <span>${evt.uniform}</span>
+                                        </button>
+                                    ` : ''}
+                                    <!-- Info Button -->
+                                    <button onclick="showEventDetails('${evt.id}')" title="Mais informações" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-navy hover:text-white text-navy flex items-center justify-center transition active:scale-95 border border-slate-200 shadow-sm">
+                                        <i class="fa-solid fa-circle-info text-base"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Activity Title -->
+                            <h3 class="text-base sm:text-lg font-extrabold text-slate-900 leading-snug mb-2.5">
+                                ${evt.activity}
+                            </h3>
+
+                            <!-- Location & Actions -->
+                            <div class="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-600">
+                                <a href="${getMapsLink(evt.location)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-800 font-bold hover:text-navy hover:underline transition bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
+                                    <i class="fa-solid fa-location-dot text-red-500"></i>
+                                    <span class="truncate max-w-[200px] sm:max-w-xs">${evt.location}</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400"></i>
+                                </a>
+
+                                <!-- Flight Tracker Highlight Button -->
+                                ${evt.flight ? `
+                                    <a href="${getFlightTrackerLink(evt.flight)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 text-white font-black text-xs sm:text-sm transition shadow-md hover:shadow-lg ring-2 ring-sky-300 active:scale-95">
+                                        <i class="fa-solid ${evt.activity.toLowerCase().includes('chegada') ? 'fa-plane-arrival' : 'fa-plane-departure'} text-amber-300 animate-pulse"></i>
+                                        <span>Rastrear Voo (${evt.flight})</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                    </a>
+                                ` : ''}
+                            </div>
+
+                            <!-- Route Summary if Available -->
+                            ${evt.route ? `
+                                <div class="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-1">
+                                    <span class="font-extrabold text-navy uppercase text-[10px] tracking-wider block border-b border-slate-200 pb-1">Roteiro Completo da Visita:</span>
+                                    <ol class="list-decimal pl-4 space-y-1 pt-1 font-medium text-slate-800">
+                                        ${evt.route.map(r => `<li>${r}</li>`).join('')}
+                                    </ol>
+                                </div>
+                            ` : ''}
+
+                            <!-- Participants summary -->
+                            ${evt.participants ? `
+                                <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+                                    <i class="fa-solid fa-users text-navy/60"></i>
+                                    <span class="font-semibold text-slate-700">Participantes:</span>
+                                    <span class="truncate text-slate-600 font-medium">${evt.participants}</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function updateIndicator() {
+            renderTimeline();
+        }
+
+        function renderModalsData() {
+            // 1. Autoridades Cards
+            const autoridadesContainer = document.getElementById('autoridadesListContainer');
+            if (autoridadesContainer) {
+                autoridadesContainer.innerHTML = logistics.autoridades.map(aut => `
+                    <div class="bg-white border-2 border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
+                        <div class="flex items-start justify-between border-b border-slate-100 pb-3">
+                            <div>
+                                <span class="text-xs font-black uppercase text-gold-dark tracking-wider block">Autoridade</span>
+                                <h4 class="text-lg sm:text-xl font-black text-navy">${aut.nome}</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 font-semibold">${aut.cargo}</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1">
+                                <div class="flex items-center gap-1.5 font-black text-navy">
+                                    <i class="fa-solid fa-hotel text-amber-500"></i>
+                                    <span>Acomodação</span>
+                                </div>
+                                <p class="font-bold text-slate-800">${aut.hospedagem}</p>
+                                <p class="text-slate-600 font-medium">Período: <span class="font-bold text-slate-800">${aut.periodo}</span></p>
+                                <p class="text-slate-600 font-medium pt-1 border-t border-slate-200/60 mt-1">
+                                    Despenseiro: <span class="font-bold text-slate-900">${aut.despenseiro}</span>
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/80 space-y-1.5">
+                                <div class="flex items-center gap-1.5 font-black text-navy">
+                                    <i class="fa-solid fa-car-side text-blue-600"></i>
+                                    <span>Viatura</span>
+                                </div>
+                                <p class="font-bold text-slate-800">${aut.viatura}</p>
+                                <div class="inline-flex items-center gap-1.5 bg-slate-900 text-white font-mono font-black text-xs px-2.5 py-1 rounded border border-slate-700 shadow-sm">
+                                    <span>PLACA:</span>
+                                    <span class="text-gold font-extrabold tracking-widest">${aut.placa}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-1 border-t border-slate-100 text-xs sm:text-sm">
+                            <div class="flex items-center justify-between bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
+                                <div>
+                                    <span class="text-slate-500 font-bold block text-[11px]">MOTORISTA DESIGNADO</span>
+                                    <p class="font-black text-slate-900">${aut.motorista}</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <a href="tel:${cleanPhone(aut.telefoneMotorista)}" class="w-9 h-9 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center transition shadow-sm" title="Ligar">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </a>
+                                    <a href="https://wa.me/55${cleanPhone(aut.telefoneMotorista)}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-green-500 hover:bg-green-600 text-white flex items-center justify-center transition shadow-sm" title="WhatsApp">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            ${aut.assistentes ? `
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200/80">
+                                    <span class="text-slate-500 font-bold block text-[11px]">ASSISTENTE / AJUDANTE DE ORDENS</span>
+                                    <p class="font-bold text-slate-800">${aut.assistentes}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 2. Hospedagem
+            const hospedagemContainer = document.getElementById('hospedagemListContainer');
+            if (hospedagemContainer) {
+                hospedagemContainer.innerHTML = logistics.hospedagem.map(h => `
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-1.5 shadow-sm">
+                        <h4 class="text-base sm:text-lg font-black text-navy">${h.autoridade}</h4>
+                        <p class="text-xs sm:text-sm font-bold text-slate-800"><i class="fa-solid fa-hotel text-amber-500 mr-1.5"></i>${h.local} (${h.suite})</p>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium">Período: <span class="font-bold text-slate-800">${h.periodo}</span></p>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium">Despenseiro: <span class="font-bold text-slate-900">${h.despenseiro || '-'}</span></p>
+                    </div>
+                `).join('');
+            }
+
+            // 3. Uniformes Cards
+            const uniformesContainer = document.getElementById('uniformesGridContainer');
+            if (uniformesContainer) {
+                uniformesContainer.innerHTML = logistics.uniformes.map(u => `
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-3 shadow-sm flex flex-col items-center text-center">
+                        <h4 class="text-base sm:text-lg font-black text-navy uppercase tracking-wider">${u.nome}</h4>
+                        <div class="w-full h-48 bg-white rounded-xl overflow-hidden border border-slate-300 flex items-center justify-center relative">
+                            <img src="./${u.file}" alt="${u.nome}" class="w-full h-full object-contain p-2" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                            <div class="hidden w-full h-full bg-white flex flex-col items-center justify-center p-4 text-center text-slate-400 font-bold text-xs">
+                                <i class="fa-solid fa-shirt text-3xl mb-2 text-slate-300 block"></i>
+                                <span>Uniforme ${u.nome}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 4. Viaturas
+            const viaturasContainer = document.getElementById('viaturasListContainer');
+            if (viaturasContainer) {
+                viaturasContainer.innerHTML = logistics.viaturas.map(v => `
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs sm:text-sm font-black px-3 py-1 rounded-lg bg-navy text-white font-mono">${v.vtr}</span>
+                            <span class="text-xs font-mono font-black bg-slate-900 text-gold px-2.5 py-1 rounded border border-slate-700">PLACA: ${v.placa}</span>
+                        </div>
+                        <h4 class="text-base sm:text-lg font-black text-slate-900">${v.autoridade}</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 font-bold">${v.modelo}</p>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-200 text-xs sm:text-sm">
+                            <span class="font-bold text-slate-800"><i class="fa-solid fa-user-gear text-slate-500 mr-1"></i>${v.motorista}</span>
+                            <div class="flex items-center gap-2">
+                                <a href="tel:${cleanPhone(v.tel)}" class="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition inline-flex items-center gap-1">
+                                    <i class="fa-solid fa-phone"></i> Ligar
+                                </a>
+                                <a href="https://wa.me/55${cleanPhone(v.tel)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition inline-flex items-center gap-1">
+                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 5. Voos Modal Content
+            const voosContainer = document.getElementById('voosListContainer');
+            if (voosContainer) {
+                voosContainer.innerHTML = logistics.voos.map(f => {
+                    const isArrival = f.tipo.toLowerCase().includes('chegada');
+                    const flightIcon = isArrival ? 'fa-plane-arrival' : 'fa-plane-departure';
+                    return `
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-3 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs sm:text-sm font-black px-2.5 py-1 rounded bg-sky-600 text-white font-mono flex items-center gap-1.5">
+                                    <i class="fa-solid ${flightIcon}"></i> ${f.codigo}
+                                </span>
+                                <span class="text-xs sm:text-sm font-extrabold text-navy font-mono">${f.horario}</span>
+                            </div>
+                            <div>
+                                <h4 class="text-base sm:text-lg font-extrabold text-slate-900">${f.passageiro}</h4>
+                                <p class="text-xs sm:text-sm text-slate-600 font-semibold">${f.tipo} — <span class="text-slate-500">${f.rota}</span></p>
+                            </div>
+                            <a href="${getFlightTrackerLink(f.codigo)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 text-white font-black text-xs sm:text-sm transition shadow-md active:scale-95">
+                                <i class="fa-solid ${flightIcon} text-amber-300"></i>
+                                <span>Rastrear Voo (${f.codigo})</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // 6. Telefones Úteis
+            const contatosContainer = document.getElementById('contatosListContainer');
+            if (contatosContainer) {
+                contatosContainer.innerHTML = logistics.telefonesUteis.map(cat => `
+                    <div class="space-y-3">
+                        <h4 class="text-xs sm:text-sm font-black text-navy uppercase tracking-wider border-b-2 border-gold/40 pb-1">${cat.categoria}</h4>
+                        <div class="space-y-2">
+                            ${cat.itens.map(item => `
+                                <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-xl flex items-center justify-between gap-3">
+                                    <div>
+                                        <h5 class="text-xs sm:text-sm font-black text-slate-900">${item.nome}</h5>
+                                        <p class="text-[11px] sm:text-xs text-slate-600 font-medium">${item.cargo}</p>
+                                        <span class="text-xs font-mono font-bold text-navy block mt-0.5">${item.tel}</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 flex-shrink-0">
+                                        <a href="tel:${cleanPhone(item.tel)}" class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center hover:bg-emerald-700 transition" title="Ligar">
+                                            <i class="fa-solid fa-phone text-xs"></i>
+                                        </a>
+                                        <a href="https://wa.me/55${cleanPhone(item.tel)}" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-green-500 text-white flex items-center justify-center hover:bg-green-600 transition" title="WhatsApp">
+                                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Modal Controls
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function showEventDetails(eventId) {
+            const modal = document.getElementById('modalEvent');
+            const container = document.getElementById('modalEventContent');
+            if (!modal || !container) return;
+
+            let evtData = null;
+            for (const day of schedule) {
+                const found = day.events.find(e => e.id === eventId);
+                if (found) { evtData = found; break; }
+            }
+            if (!evtData) return;
+
+            const hasNotes = evtData.notes && evtData.notes.trim() !== '';
+
+            container.innerHTML = `
+                <div class="space-y-3.5 text-xs sm:text-sm">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-base sm:text-lg font-black font-mono text-navy bg-navy/10 px-3 py-1 rounded-lg">${evtData.time}</span>
+                            <span class="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded border border-slate-200">${evtData.id}</span>
+                        </div>
+                        ${evtData.uniform ? `
+                            <span class="px-3 py-1 rounded-lg bg-gold/20 text-navy-dark font-extrabold border border-gold/40">
+                                ${evtData.uniform}
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <h3 class="text-lg font-black text-slate-900 leading-snug">${evtData.activity}</h3>
+
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
+                        <div class="flex items-center gap-2 font-bold text-slate-800">
+                            <i class="fa-solid fa-location-dot text-red-500"></i>
+                            <span>${evtData.location}</span>
+                        </div>
+                        <a href="${getMapsLink(evtData.location)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-navy font-bold hover:underline">
+                            <span>Abrir no Google Maps</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    ${evtData.flight ? `
+                        <div class="p-3 bg-sky-50 rounded-xl border border-sky-200 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-sky-800">Código do Voo:</span>
+                                <p class="font-black text-sky-900 font-mono text-base">${evtData.flight}</p>
+                            </div>
+                            <a href="${getFlightTrackerLink(evtData.flight)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-black transition">
+                                Rastrear Voo
+                            </a>
+                        </div>
+                    ` : ''}
+
+                    ${evtData.route ? `
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
+                            <span class="font-extrabold text-navy uppercase text-xs block border-b border-slate-200 pb-1">Roteiro Completo da Visita:</span>
+                            <ol class="list-decimal pl-4 space-y-1 pt-1 font-medium text-slate-800">
+                                ${evtData.route.map(r => `<li>${r}</li>`).join('')}
+                            </ol>
+                        </div>
+                    ` : ''}
+
+                    ${evtData.participants ? `
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <span class="font-extrabold text-navy">Participantes Convocados:</span>
+                            <p class="text-slate-700 font-medium mt-0.5">${evtData.participants}</p>
+                        </div>
+                    ` : ''}
+
+                    ${hasNotes ? `
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-200/80 text-amber-900">
+                            <span class="font-extrabold flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info text-amber-600"></i> Observações:
+                            </span>
+                            <p class="font-medium mt-0.5">${evtData.notes}</p>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            openModal('modalEvent');
+        }
+    </script>
+</body>
+</html>
